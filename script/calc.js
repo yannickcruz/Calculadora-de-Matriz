@@ -48,7 +48,6 @@ export function transposta(m, order){
             trans[j][i] = m[i][j];
         }
     }
-    
     return trans;
 }
 
@@ -58,6 +57,11 @@ export function inversa(m, order){
     let cofatores = [];
     let tempArray = [];
     let aux = 0;
+
+    if(order === 1){
+        const inversa = 1 / determinante;
+        return [[inversa]];
+    }
 
     for(let line = 0; line < order; line++){
         for(let column = 0; column < order; column++){
@@ -97,7 +101,6 @@ export function inversa(m, order){
 }
 
 export function somaOuSub(m1, m2, order, order2, action){
-    //console.log(m2);
     let tempMatrix = [];
 
     if(order2 > order){
