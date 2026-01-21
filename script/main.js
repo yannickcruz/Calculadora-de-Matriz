@@ -503,7 +503,7 @@ function calcFunc(){
         m1 = matrixExtractor(m1, order);
         m2 = matrixExtractor(m2, order2);
         let result = somaOuSub(m1, m2, order, order2, 0);
-        displayCalc("Soma de matrizes criada.");
+        displayCalc("Subtração de matrizes criada.");
         removeMatrix(-1);
         generateResultMatrix(0, 0, 0);
         generateResultMatrix(tempOrder, result);
