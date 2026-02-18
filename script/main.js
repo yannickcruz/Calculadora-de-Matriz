@@ -178,6 +178,8 @@ function resetMatrix(){
     localStorageMod('reset');
     removeMatrix(2);
     matValueQtr(true);
+
+    generateResultMatrix(0, 0, 0);
 }
 function createScalar(){
     const div = document.getElementById("scalar");
