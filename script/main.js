@@ -494,6 +494,10 @@ function calcFunc(){
         m1 = matrixExtractor(m1, order);
         m2 = matrixExtractor(m2, order2);
         let result = somaOuSub(m1, m2, order, order2, 1);
+        if(result === -1){
+            displayCalc("Estas matrizes não podem ser somadas");
+            return 0;
+        }
         displayCalc("Soma de matrizes criada.");
         removeMatrix(-1);
         generateResultMatrix(0, 0, 0);
@@ -503,6 +507,10 @@ function calcFunc(){
         m1 = matrixExtractor(m1, order);
         m2 = matrixExtractor(m2, order2);
         let result = somaOuSub(m1, m2, order, order2, 0);
+        if(result === -1){
+            displayCalc("Estas matrizes não podem ser subtraídas!");
+            return 0;
+        }
         displayCalc("Subtração de matrizes criada.");
         removeMatrix(-1);
         generateResultMatrix(0, 0, 0);

@@ -101,40 +101,10 @@ export function inversa(m, order){
 }
 
 export function somaOuSub(m1, m2, order, order2, action){
-    let tempMatrix = [];
 
-    if(order2 > order){
-        for(let k = 0; k < order2; k++){
-            tempMatrix[k] = new Array(order2).fill(0);
-        }
-        for(let line = 0; line < order2; line++){
-            for(let col = 0; col < order2; col++){
-                if(col < order && line < order){
-                    tempMatrix[line][col] = m1[line][col];
-                } else{
-                    tempMatrix[line][col] = 0;
-                }
-            }
-        }
-        m1 = tempMatrix;
+    if(order !== order2){
+        return -1;
     }
-    if(order2 < order){
-        for(let k = 0; k < order; k++){
-            tempMatrix[k] = new Array(order).fill(0);
-        }
-        for(let line = 0; line < order; line++){
-            tempMatrix[line] = [];
-            for(let col = 0; col < order; col++){
-                if(col < order2 && line < order2){
-                    tempMatrix[line][col] = m2[line][col];
-                } else{
-                    tempMatrix[line][col] = 0;
-                }
-            }
-        }
-        m2 = tempMatrix;
-    }
-    if(order2 > order) order = order2;
 
     for(let m1Line = 0; m1Line < order; m1Line++){
         for(let m1Col = 0; m1Col < order; m1Col++){
